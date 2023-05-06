@@ -2,6 +2,8 @@ const CELL_WIDTH = 30
 const CELL_HEIGHT = 30
 const NROW = 600 / CELL_WIDTH
 const NCOLUMN = 600 / CELL_HEIGHT
+//hadsfj;alksjdf;las
+
 const canvas = document.getElementById('mycanvas');
 const ctx = canvas.getContext('2d');
 let state = 1;
