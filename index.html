@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Automata</title>
@@ -12,7 +12,11 @@
 
 <body>
     <h1>Cellular Automata</h1>
-    <p><button type="button" onclick="clearCanvas()">Clear</button></p>
+    <p>
+        <button type="button" onclick="nextCanvas()">Next</button>
+        <button type="button" onclick="clearCanvas()">Clear</button>
+        <button type="button" onclick="changeColor()">Change Color</button>
+    </p>
     <canvas width="600" height="600"></canvas>
     <script src="./script.js"></script>
 </body>
