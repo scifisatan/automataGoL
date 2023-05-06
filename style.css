@@ -3,6 +3,7 @@ body {
     padding: 0px;
     background-color: #3d3d3d;
     color: #c8c8c8;
+    font-family: 'Roboto', sans-serif;
 
     /* To prevent select at double click*/
     -webkit-user-select: none;
@@ -18,4 +19,103 @@ canvas {
 
 p,h1{
     margin: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+button {
+    background-color: #ff5f5f;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff4141;
+}
+
+#colorbtn.white {
+    background-color: #c8c8c8;
+    color: #3d3d3d;
+}
+
+#colorbtn.white:hover {
+    background-color: #a8a8a8;
+}
+
+#mycanvas {
+    display: block;
+    margin: 0 auto;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #3d3d3d;
+    color: #c8c8c8;
+    font-family: 'Roboto', sans-serif;
+
+    /* To prevent select at double click*/
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+canvas {
+    margin: 10px;
+    padding: 0px;
+    /*border: 1px dotted red;*/
+    background-color: rgb(0, 0, 0);
+}
+
+p,h1{
+    margin: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+
+button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  #playbtn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  #nextbtn {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  #clearbtn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  #colorbtn {
+    background-color: #9c27b0;
+    color: white;
+  }
+#mycanvas {
+    display: block;
+    margin: 0 auto;
 }
