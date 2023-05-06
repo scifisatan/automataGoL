@@ -1,0 +1,13 @@
+body{
+    margin: 0px;
+    padding:0px;
+    background-color: #3d3d3d;
+    color: #c8c8c8;
+}
+
+canvas{
+    margin: 10px;
+    padding: 0px;
+    /*border: 1px dotted red;*/
+    background-color: black;
+}
