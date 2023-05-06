@@ -5,7 +5,6 @@ const NCOLUMN = 800 / CELL_HEIGHT;
 const canvas = document.getElementById('mycanvas');
 const ctx = canvas.getContext('2d');
 const color = ["black", "white"];
-let state = 1;
 let currentBoard = createBoard();
 let nextBoard = createBoard();
 
@@ -104,5 +103,6 @@ function play() {
       }
     }, 300);
   }
+  
 
 renderCanvas(currentBoard);
