@@ -1,5 +1,5 @@
-const CELL_WIDTH = 30
-const CELL_HEIGHT = 30
+const CELL_WIDTH = 20
+const CELL_HEIGHT = 20
 const NROW = 800 / CELL_WIDTH
 const NCOLUMN = 800 / CELL_HEIGHT
 const canvas = document.getElementById('mycanvas');
