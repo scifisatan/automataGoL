@@ -13,11 +13,11 @@
 <body>
     <h1>Cellular Automata</h1>
     <p>
-        <button type="button" onclick="nextCanvas()">Next</button>
-        <button type="button" onclick="clearCanvas()">Clear</button>
+        <button type="button" id = "nextbtn" onclick="nextCanvas()">Next</button>
+        <button type="button" id="clearbtn" onclick="clearCanvas()">Clear</button>
         <button type="button" id = "colorbtn" onclick="changeColor()">Change Color : White</button>
     </p>
-    <canvas width="600" height="600"></canvas>
+    <canvas id="mycanvas" width="600" height="600"></canvas>
     <script src="./script.js"></script>
 </body>
 

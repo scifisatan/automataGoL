@@ -1,43 +1,82 @@
-const CELL_WIDTH = CELL_HEIGHT = 18
-const NROW = NCOLUMN = 600 / CELL_WIDTH
-const canvas = document.querySelector('canvas');
+const CELL_WIDTH = 24
+const CELL_HEIGHT = 24
+const NROW =  600 / CELL_WIDTH
+const NCOLUMN = 600 / CELL_HEIGHT
+const canvas = document.getElementById('mycanvas');
 const ctx = canvas.getContext('2d');
-let pick = 1;
+let state = 1;
+let color = ["black","white"];
 
-let color = ["black","white"]
-
-
-function renderBoard(penColor, x, y){
-    ctx.fillStyle = penColor;
-    ctx.fillRect(x, y, CELL_WIDTH, CELL_HEIGHT);
+function createBoard ()  {
+    let board = new Array(NROW);
+    for (let i = 0; i <NROW; ++i) {
+        board[i] = new Array(NCOLUMN)
+        for (let j = 0; j <NCOLUMN; ++j) {
+            board[i][j] = 0;
+        }
+        console.log("\n")
+        
+    }
+    return board;
 }
 
-function mouseClick(event) {
-    mouseX = event.offsetX;
-    mouseY = event.offsetY;
-    x = Math.floor(mouseX / CELL_WIDTH) * CELL_WIDTH
-    y = Math.floor(mouseY / CELL_HEIGHT) * CELL_HEIGHT
-    renderBoard(color[pick] , x , y)
-    
+let currentBoard = createBoard();
+let nextBoard = createBoard();
+
+function renderCanvas(board){
+    for (let i = 0; i <NROW; ++i) {
+        for (let j = 0; j <NCOLUMN; ++j) {
+        ctx.fillStyle = color[board[i][j]]
+        ctx.fillRect(i*CELL_WIDTH, j*CELL_HEIGHT, CELL_WIDTH, CELL_HEIGHT);
+        } 
+    }
 }
-canvas.addEventListener("click", mouseClick)
+
+function computeNextBoard(board){
+    for (let i = 0; i <NROW; ++i) {
+        for (let j = 0; j <NCOLUMN; ++j) {
+            if(board[i][j] === 0){
+                board[i][j] = 1;
+            }
+            else{board[i][j] = 0}
+        } 
+    }
+
+}
+
+
+canvas.addEventListener("click", (e) => {
+    console.log("clicked")
+    mouseX = e.offsetX;
+    mouseY = e.offsetY;
+    x = Math.floor(mouseX / CELL_WIDTH) 
+    y = Math.floor(mouseY / CELL_HEIGHT)
+    currentBoard[x][y] = state;
+    renderCanvas(currentBoard);
+
+})
 
 function changeColor(){
-    if (pick === 0){
-        pick = 1;
+    if (state === 0){
+        state = 1;
         document.getElementById("colorbtn").innerText = "Change Color : White"
     }
     else {
-        pick = 0;
+        state = 0;
         document.getElementById("colorbtn").innerText = "Change Color : Black"
     }
 }
 
 function clearCanvas() {
-    ctx.clearRect(0, 0, 800, 800);
+    currentBoard = createBoard();
+    renderCanvas(currentBoard)
     console.log("Board Cleared")
 }
 
 function nextCanvas(){
-    console.log("next canvas")
+    nextBoard = computeNextBoard(currentBoard);
+    nextBoard = currentBoard
+    renderCanvas(nextBoard)
 }
+
+
