@@ -25,9 +25,11 @@ canvas.addEventListener("click", mouseClick)
 function changeColor(){
     if (pick === 0){
         pick = 1;
+        document.getElementById("colorbtn").innerText = "Change Color : White"
     }
     else {
         pick = 0;
+        document.getElementById("colorbtn").innerText = "Change Color : Black"
     }
 }
 
