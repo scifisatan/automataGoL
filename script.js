@@ -83,15 +83,17 @@ let isPlaying = false;
 let intervalId;
 
 function play() {
-  
+
   if (!isPlaying) {
-    isPlaying = true;
     document.getElementById("playbtn").innerText = "Pause"
+
+    isPlaying = true;
+
     intervalId = setInterval(() => {
       computeNextBoard(currentBoard, nextBoard);
       [currentBoard, nextBoard] = [nextBoard, currentBoard];
       renderCanvas(currentBoard);
-  
+
       // Check if all cells are dead
       let allDead = true;
       for (let i = 0; i < NROW; ++i) {
@@ -99,11 +101,12 @@ function play() {
           if (currentBoard[i][j] === 1) {
             allDead = false;
             break;
+
           }
         }
         if (!allDead) break;
       }
-  
+
       if (allDead) {
         clearInterval(intervalId);
         document.getElementById("playbtn").innerText = "Play"
@@ -118,6 +121,6 @@ function play() {
   }
 }
 
-  
+
 
 renderCanvas(currentBoard);
