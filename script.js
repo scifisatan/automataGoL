@@ -79,8 +79,15 @@ function nextCanvas() {
   [currentBoard, nextBoard] = [nextBoard, currentBoard];
   renderCanvas(currentBoard);
 }
+let isPlaying = false;
+let intervalId;
+
 function play() {
-    let intervalId = setInterval(() => {
+  
+  if (!isPlaying) {
+    isPlaying = true;
+    document.getElementById("playbtn").innerText = "Pause"
+    intervalId = setInterval(() => {
       computeNextBoard(currentBoard, nextBoard);
       [currentBoard, nextBoard] = [nextBoard, currentBoard];
       renderCanvas(currentBoard);
@@ -99,10 +106,18 @@ function play() {
   
       if (allDead) {
         clearInterval(intervalId);
+        document.getElementById("playbtn").innerText = "Play"
         console.log("All cells are dead. Stopping the game.");
+        isPlaying = false;
       }
     }, 300);
+  } else {
+    document.getElementById("playbtn").innerText = "Play"
+    clearInterval(intervalId);
+    isPlaying = false;
   }
+}
+
   
 
 renderCanvas(currentBoard);
