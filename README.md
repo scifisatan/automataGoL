@@ -2,7 +2,7 @@ Live Website: https://abishrestha.com.np/automataGoL
 ---
 
 # Conway's Game of Life
-#### Implemented using HTML/CSS/JS
+### Implemented using HTML/CSS/JS
 
 - What is Conway's Game of Life? 
   - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
