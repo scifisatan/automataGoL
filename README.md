@@ -1,4 +1,5 @@
 Live Website: https://abishrestha.com.np/automataGoL
+---
 
 # Conway's Game of Life
 ### Implemented using HTML/CSS/JS
