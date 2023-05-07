@@ -9,8 +9,13 @@ Live Website: https://abishrestha.com.np/automataGoL
  
 ## Things I learned from this: 
 - Cool trick to swtich 0 and 1
-https://github.com/scifisatan/automataGoL/blob/d13ce54167aef443bed035dbd4aed5e961cec4e5/script.js#L64
-https://github.com/scifisatan/automataGoL/blob/d13ce54167aef443bed035dbd4aed5e961cec4e5/script.js#L65
-- Familiarised with canvas and button element
+```
+function changeColor() {
+  const newState = 1 - state;
+  state = newState;
+  document.getElementById("colorbtn").innerText = "Change Color : " + color[newState];
+}
+```
+- Familiarised with canvas, button element, DOM Manipulation  and Array in JS
 - Automata, States and Transition Table
-- DOM Manipulation (Beginner's Level)
+
