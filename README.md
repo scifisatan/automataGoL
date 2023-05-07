@@ -8,7 +8,9 @@ Live Website: https://abishrestha.com.np/automataGoL
   - https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
  
 ## Things I learned from this: 
-- (Cool trick to swtich 0 and 1)[https://github.com/scifisatan/automataGoL/blob/d13ce54167aef443bed035dbd4aed5e961cec4e5/script.js#L64]
+- Cool trick to swtich 0 and 1
+https://github.com/scifisatan/automataGoL/blob/d13ce54167aef443bed035dbd4aed5e961cec4e5/script.js#L64
+https://github.com/scifisatan/automataGoL/blob/d13ce54167aef443bed035dbd4aed5e961cec4e5/script.js#L65
 - Familiarised with canvas and button element
 - Automata, States and Transition Table
 - DOM Manipulation (Beginner's Level)
