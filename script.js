@@ -5,14 +5,9 @@ const NCOLUMN = 800 / CELL_HEIGHT;
 const canvas = document.getElementById('mycanvas');
 const ctx = canvas.getContext('2d');
 const color = ["black", "white"];
-let currentBoard = createBoard();
-let nextBoard = createBoard();
+let currentBoard = new Array(NROW).fill(0).map(() => new Array(NCOLUMN).fill(0));
+let nextBoard =  new Array(NROW).fill(0).map(() => new Array(NCOLUMN).fill(0));
 
-function createBoard() {
-  return Array.from({ length: NROW }, () =>
-    Array.from({ length: NCOLUMN }, () => 0)
-  );
-}
 
 function renderCanvas(board) {
   for (let i = 0; i < NROW; i++) {
@@ -69,8 +64,8 @@ function changeColor() {
 }
 
 function clearCanvas() {
-  currentBoard = createBoard();
-  nextBoard = createBoard();
+  currentBoard =  new Array(NROW).fill(0).map(() => new Array(NCOLUMN).fill(0));
+  nextBoard =  new Array(NROW).fill(0).map(() => new Array(NCOLUMN).fill(0));
   renderCanvas(currentBoard);
 }
 
@@ -113,7 +108,7 @@ function play() {
         console.log("All cells are dead. Stopping the game.");
         isPlaying = false;
       }
-    }, 300);
+    }, 1000/9);
   } else {
     document.getElementById("playbtn").innerText = "Play"
     clearInterval(intervalId);
